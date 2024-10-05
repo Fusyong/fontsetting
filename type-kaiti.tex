@@ -1,0 +1,28 @@
+% tex/texmf-fonts/tex/context/user/type-kaiti.tex
+\starttypescript [kaiti]
+% \definefontsynonym[Human readable]       [file:filename without extension]
+  \definefontsynonym[NotoSerif-Regular]    [file:simkai]
+  \definefontsynonym[NotoSerif-Italic]     [file:simfang]
+  \definefontsynonym[NotoSerif-Bold]       [file:simhei]
+  \definefontsynonym[NotoSerif-BoldItalic] [file:STXINWEI]
+\stoptypescript
+
+\starttypescript [kaiti]
+  \setups[font:fallback:serif]          % 安全设置: 如果没有发现时使用备用字体
+% \definefontsynonym[ConTeXt basics name] [Human readable]       [features=default]
+  \definefontsynonym[Serif]                [NotoSerif-Regular]    [features=default]
+  \definefontsynonym[SerifItalic]          [NotoSerif-Italic]     [features=default]
+  \definefontsynonym[SerifBold]            [NotoSerif-Bold]       [features=default]
+  \definefontsynonym[SerifBoldItalic]      [NotoSerif-BoldItalic] [features=default]
+\stoptypescript
+
+% #3. 把"kaiti"字体脚本中的四种变体包定义为roman typeface
+\starttypescript [kaiti]
+  \definetypeface [kaiti]  [rm] [roman] [kaiti][default]
+\stoptypescript
+
+% 使用字体脚本`type-kaiti.tex`设置拼音字体
+% \usetypescriptfile[kaiti]
+% \definefont[pinyin][kaiti]
+% 或者直接使用
+% \definefont[pinyin][name:kaitig*default at 9pt]

@@ -1,0 +1,73 @@
+\setupinterlinespace[line=2.5em]
+\setscript[hanzi]
+
+\usetypescriptfile[mscore]
+\setupbodyfont[mschinese,rm,10.5pt]
+% \setupbodyfont[mschinese,ss,10.5pt]
+% \setupbodyfont[mschinese,tt,10.5pt]
+% \setupbodyfont[mschineseliterate,16pt]
+
+\usetypescriptfile[notocjksc]
+% \setupbodyfont[noto,rm,10.5pt]
+% \setupbodyfont[noto,ss,10.5pt]
+% \setupbodyfont[noto,tt,10.5pt]
+
+\starttext
+
+
+\chapter{五种字体族 five font styles}
+
+
+\section {defined 已经定义}
+
+
+{\rm 中文：“字体测试！” rm, Roman font family}
+
+{\ss 中文：“字体测试！” ss, Sans serif font family}
+
+{\tt 中文：“字体测试！” tt, teletype font family}
+
+$$y = x^2 + 100$$ （mm, cambria 数学字体）
+
+
+\section {not defined 未定义}
+
+
+{\hw 中文：“字体测试！” hw, handwritten font family}
+
+{\cg 中文：“字体测试！” cg, calligraphic font family}
+
+
+\chapter{字体族变形 alternative forms}
+
+
+\section {defined 已经定义}
+
+
+{\tf 中文：“字体测试！” tf, typeface}
+
+{\it 中文：“字体测试！” it, italic alternative}
+
+{\bf 中文：“字体测试！” bf, boldface alternative}
+
+{\bi 中文：“字体测试！” bi, bold italic alternative}
+
+{\sl 中文：“字体测试！” sl, slanted alternative}
+
+{\bs 中文：“字体测试！” bs, bold slanted alternative}
+
+{\sc 中文：“字体测试！” sc, small caps alternative}
+
+\section {not defined 未定义}
+
+{\os 中文：“字体测试！” os, old style alternative}
+
+\chapter{繁體字 traditional Chinese}
+
+《大學》之道，在明明德，在親民，在止於至善。\endnote{
+程子曰：「親，當作新。」○大學者，大人之學也。明，明之也。明德者，人之所得乎天，而虚靈不昧，以具衆理而應萬事者也。但爲氣禀所拘，人欲所蔽，則有時而昏；然其本體之明，則有未嘗息者。故學者當因其所發而遂明之，以復其初也。新者，革其舊之謂也，言既自明其明德，又當推以及人，使之亦有以去其舊染之污也。止者，必至於是而不遷之意。至善，則事理當然之極也。言明明德、新民，皆當至於至善之地而不遷。蓋必其有以盡夫天理之極，而無一毫人欲之私也。此三者，大學之綱領也。}
+
+\placenotes[endnote]
+
+
+\stoptext

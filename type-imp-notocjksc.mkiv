@@ -1,0 +1,95 @@
+%D \module
+%D   [       file=type-imp-notocjksc,
+%D        version=2022.09.03,
+%D          title=\CONTEXT\ Typescript Macros,
+%D       subtitle=NotoCJKsc Fonts,
+%D         author=Hans Hagen,
+%D           date=\currentdate,
+%D      copyright={PRAGMA ADE \& \CONTEXT\ Development Team}]
+%C
+%C This module is part of the \CONTEXT\ macro||package and is
+%C therefore copyrighted by \PRAGMA. See mreadme.pdf for
+%C details.
+
+
+% usage:
+% \usetypescriptfile[notocjksc]
+% \setupbodyfont[noto, rm, 10.5pt]
+% https://github.com/googlefonts/noto-cjk
+% https://fonts.google.com/noto/fonts
+% TODO use NotoSansMonoCJKsc-Bold.otf and NotoSansMath-Regular.ttf
+% This typescript references type-imp-mscore.mkiv and type-imp-ipaex.mkiv
+
+\starttypescriptcollection[NotoCJKsc]
+
+    \definefontfeature  [zh-default]            [script=default,lang=chinese]
+    \definefontfeature  [zh-latin-default]      [zh-default]
+    \definefontfeature  [zh-latin-slanted]      [zh-latin-default]            [slant=.2]
+    \definefontfeature  [zh-latin-slanted-mono]                               [slant=.2]
+    \definefontfeature  [zh-latin-smallcaps]    [zh-latin-default]            [smcp=yes]
+    \definefontfeature  [zh-latin-smallcaps-mono]                             [cmcp=yes]
+
+    % .ttf not really needed but we want to force the originals
+
+    \definefontfallback[zh-serif]           [\s!name:simsunextb*zh-latin-default]               [0x20000-0x2A6DF][rscale=1.0406]
+    \definefontfallback[zh-serifitalic]     [\s!file:NotoSerif-Italic.ttf*zh-latin-default]     [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-serifbolditalic] [\s!file:NotoSerif-BoldItalic.ttf*zh-latin-default] [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-serifslanted]    [\s!file:Amiri-Slanted.ttf*zh-latin-slanted]        [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-serifboldslanted][\s!file:Amiri-BoldSlanted.ttf*zh-latin-slanted]    [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-serifcaps]       [\s!file:NotoSerif-Regular.ttf*zh-latin-smallcaps]  [0x0000-0x0400][force=yes,rscale=1.0406]
+
+    \definefontfallback[zh-sansitalic]      [\s!file:NotoSans-Italic.ttf*zh-latin-default]      [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-sansbolditalic]  [\s!file:NotoSans-BoldItalic.ttf*zh-latin-default]  [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-sansslanted]     [\s!file:Amiri-Slanted.ttf*zh-latin-slanted]        [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-sansboldslanted] [\s!file:Amiri-BoldSlanted.ttf*zh-latin-slanted]    [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-sanscaps]        [\s!file:NotoSans-Regular.ttf*zh-latin-smallcaps]   [0x0000-0x0400][force=yes,rscale=1.0406]
+
+    \definefontfallback[zh-monobold]        [\s!file:courbd.ttf]                                        [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-monoitalic]      [\s!file:couri.ttf]                                         [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-monobolditalic]  [\s!file:courbi.ttf]                                        [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-monoslanted]     [\s!file:Amiri-Slanted.ttf*zh-latin-slanted]                [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-monoboldslanted] [\s!file:Amiri-BoldSlanted.ttf*zh-latin-slanted]            [0x0000-0x0400][force=yes,rscale=1.0406]
+    \definefontfallback[zh-monocaps]        [\s!file:NotoSansMono-Regular.ttf*zh-latin-smallcaps-mono]  [0x0000-0x0400][force=yes,rscale=1.0406]
+
+    \starttypescript [\s!serif] [noto]
+        \setups[\s!font:\s!fallback:\s!serif]
+        \definefontsynonym [\s!Serif]           [\s!file:NotoSerifCJKsc-Regular.otf]   [\s!features=zh-default,\s!fallbacks=zh-serif] % use [notoserifcjksc] for first time loading
+        \definefontsynonym [\s!SerifItalic]     [\s!file:NotoSansCJKsc-Regular.otf][\s!features=zh-default,\s!fallbacks=zh-serifitalic]
+        \definefontsynonym [\s!SerifBold]       [\s!file:NotoSerifCJKsc-Bold.otf]      [\s!features=zh-default] %
+        \definefontsynonym [\s!SerifBoldItalic] [\s!file:NotoSansCJKsc-Bold.otf]     [\s!features=zh-default,\s!fallbacks=zh-serifbolditalic]
+        \definefontsynonym [\s!SerifSlanted]    [\s!file:NotoSansCJKsc-Regular.otf][\s!features=zh-default,\s!fallbacks=zh-serifslanted]
+        \definefontsynonym [\s!SerifBoldSlanted][\s!file:NotoSansCJKsc-Bold.otf]     [\s!features=zh-default,\s!fallbacks=zh-serifboldslanted]
+        \definefontsynonym [\s!SerifCaps]       [\s!file:NotoSansCJKsc-Regular.otf][\s!features=zh-default,\s!fallbacks=zh-serifcaps]
+    \stoptypescript
+
+    \starttypescript [\s!sans] [noto]
+        \setups[\s!font:\s!fallback:\s!sans]
+        \definefontsynonym[\s!Sans]            [\s!file:NotoSansCJKsc-Regular.otf][\s!features=zh-default]
+        \definefontsynonym[\s!SansItalic]      [\s!file:NotoSerifCJKsc-Regular.otf]   [\s!features=zh-default,\s!fallbacks=zh-sansitalic]
+        \definefontsynonym[\s!SansBold]        [\s!file:NotoSansCJKsc-Bold.otf]   [\s!features=zh-default]
+        \definefontsynonym[\s!SansBoldItalic]  [\s!file:NotoSerifCJKsc-Bold.otf]  [\s!features=zh-default,\s!fallbacks=zh-sansbolditalic]
+        \definefontsynonym[\s!SansSlanted]     [\s!file:NotoSerifCJKsc-Regular.otf]   [\s!features=zh-default,\s!fallbacks=zh-sansslanted]
+        \definefontsynonym[\s!SansBoldSlanted] [\s!file:NotoSerifCJKsc-Bold.otf]  [\s!features=zh-default,\s!fallbacks=zh-sansboldslanted]
+        \definefontsynonym[\s!SansCaps]        [\s!file:NotoSerifCJKsc-Medium.otf]   [\s!features=zh-default,\s!fallbacks=zh-sanscaps]
+    \stoptypescript
+
+    \starttypescript [\s!mono] [noto]
+        \setups[\s!font:\s!fallback:\s!mono]
+        \definefontsynonym[\s!Mono]            [\s!file:NotoSansMonoCJKsc-Regular.otf]  [\s!features=zh-default]
+        \definefontsynonym[\s!MonoItalic]      [\s!file:NotoSerifCJKsc-Regular.otf  ]       [\s!features=zh-slanted,\s!fallbacks=zh-monoitalic]
+        \definefontsynonym[\s!MonoBold]        [\s!file:NotoSansCJKsc-Bold.otf  ]       [\s!features=zh-default,\s!fallbacks=zh-monobold] % NotoSansMonoCJKsc-Bold.otf don't work
+        \definefontsynonym[\s!MonoBoldItalic]  [\s!file:NotoSerifCJKsc-Bold.otf]        [\s!features=zh-slanted,\s!fallbacks=zh-monobolditalic]
+        \definefontsynonym[\s!MonoSlanted]     [\s!file:NotoSerifCJKsc-Regular.otf  ]       [\s!features=zh-slanted,\s!fallbacks=zh-monoslanted]
+        \definefontsynonym[\s!MonoBoldSlanted] [\s!file:NotoSerifCJKsc-Bold.otf]        [\s!features=zh-slanted,\s!fallbacks=zh-monoboldslanted]
+        \definefontsynonym[\s!MonoCaps]        [\s!file:NotoSerifCJKsc-Medium.otf  ]       [\s!features=zh-default,\s!fallbacks=zh-monocaps]
+    \stoptypescript
+
+    \starttypescript[noto]
+        \definetypeface [\typescriptone] [\s!rm] [\s!serif] [noto] [\s!default]
+        \definetypeface [\typescriptone] [\s!ss] [\s!sans]  [noto] [\s!default]
+        \definetypeface [\typescriptone] [\s!tt] [\s!mono]  [noto] 
+        \definetypeface [\typescriptone] [\s!mm] [\s!math]  [cambria] % cambria.ttc. or NotoSansMath-Regular.ttf?
+    \stoptypescript
+
+\stoptypescriptcollection
+
