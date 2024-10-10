@@ -1,0 +1,64 @@
+%
+%
+% 测试用例
+%
+%
+\environment[opensc.tex] % 模块中使用`\startenvironment...\stopenvironment`会出错
+\replacemissingcharacters % 缺字体时替换为方框标记
+
+\startTEXpage
+% 设置正文字体
+\setupbodyfont[opensc,rm]
+
+
+\showbodyfont[opensc]
+
+\chapter{第一章  一级标题  Chapter 1}
+
+\section{第一节  二级标题  Section 1}
+
+\subsection{第一小节  三级标题  Subsection 1}
+
+默认正文：中文字体测试。 Latin in fallback fonts.
+
+{\bf 粗体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\it 斜体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\bi 粗斜正文：中文字体测试。 Latin in fallback fonts.}
+
+
+\setupbodyfont[opensc,ss]
+
+\chapter{第一章  一级标题  Chapter 1}
+
+\section{第一节  二级标题  Section 1}
+
+\subsection{第一小节  三级标题  Subsection 1}
+
+默认正文：中文字体测试。 Latin in fallback fonts.
+
+{\bf 粗体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\it 斜体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\bi 粗斜正文：中文字体测试。 Latin in fallback fonts.}
+
+
+% 设置正文字体
+\setupbodyfont[opensc,tt]
+
+\chapter{第一章  一级标题  Chapter 1}
+
+\section{第一节  二级标题  Section 1}
+
+\subsection{第一小节  三级标题  Subsection 1}
+
+默认正文：中文字体测试。 Latin in fallback fonts.
+
+{\bf 粗体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\it 斜体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\bi 粗斜正文：中文字体测试。 Latin in fallback fonts.}
+\stopTEXpage

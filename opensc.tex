@@ -1,0 +1,62 @@
+%
+%
+% 开源简体中文字体加英文字体混排设置
+% 中文使用notocjksc、朱雀仿宋、霞鹜文楷(中文简体)
+% 拉丁字符使用latinmodern系列
+%
+% 
+
+
+% 官方文档：
+% https://wiki.contextgarden.net/Command/definefontfamily
+% https://wiki.contextgarden.net/Command/definefallbackfamily
+
+
+% 来源于网上的一些示例（已经忘记出处）：
+% \definefontfamily[mainface]       [rm][TeX Gyre Pagella]
+% \definefontfamily[changedstyles]  [rm][TeX Gyre Pagella][tf=style:italic,it=style:bold,bi=style:bolditalic,bf=style:regular]
+% \definefontfamily[changedfiles]   [rm][TeX Gyre Pagella][it=file:texgyreherositalic,bi=file:texgyrecursorbolditalic]
+% \definefontfamily[changedfeatures][rm][TeX Gyre Pagella][tf=features:smallcaps,bf=features:none]
+% \definefallbackfamily [alegreya]  [rm][KaiseiOpti] [preset=range:japanese]
+% \definefallbackfamily [studentA]  [ss][Noto Sans CJK SC][range={0x0000-0x058F},force=yes]%preset=range:chinese
+
+
+%
+%
+% GB/T 18358—2009《中小学教科书幅面尺寸及版面通用要求》：
+%
+%
+% a类   一至三年级      楷      21至16pt
+% b类   二至四年级      楷、宋  14pt
+% c类   五年级至高中    宋      12pt
+% d类   高中理科        宋      10.5pt
+
+
+% 定义后备字体家族，用于西文
+\definefallbackfamily[opensc][rm]            % 名称、类型
+    [latinmodernroman]                              % 默认字体/字体家族
+    [range={basiclatin,latinsupplement},force=yes]  % 强制用于西文
+\definefallbackfamily[opensc][ss]            % 名称、类型
+    [latinmodernsans]                              % 默认字体/字体家族
+    [range={basiclatin,latinsupplement},force=yes]  % 强制用于西文
+\definefallbackfamily[opensc][tt]            % 名称、类型
+    [latinmodernmonolight]                              % 默认字体/字体家族 latinmodernmonolight latinmodernmonoproplight
+    [range={basiclatin,latinsupplement},force=yes]  % 强制用于西文
+
+% 定义字体家族
+\definefontfamily [opensc][rm]   % 名称、类型： rm/serif, ss/sansserif, tt/teletype, hw/handwritten, cg/calligraphic, mm/mathematics
+    [notoserifcjksc]                           % 默认字体/字体家族
+    [
+        bf={notosanscjkscregular},                    % 粗体
+        it={lxgwwenkairegular},                     % 斜体
+        bi={notosanscjkscbold},                  % 粗斜体
+    ]
+\definefontfamily[opensc][ss][zhuquefangsongtechnicalpreview][bf=notosanscjkscregular,it=lxgwwenkairegular,bi=notosanscjkscbold]
+\definefontfamily[opensc][tt][lxgwwenkai][bf=notosanscjkscregular,it=zhuquefangsongregular,bi=notosanscjkscbold]
+
+% 拼音字体
+% \definefont[pinyin] [name:wukongpinyinsanslight*default at 10.5pt]
+
+% 书写用田字格楷体、方格楷体
+% 统编教材，一至四年级田字格1.45cm见方，五六年级方格1.25cm见方
+% \definefont[tiangekai] [name:stkaiti*default at 35pt]
