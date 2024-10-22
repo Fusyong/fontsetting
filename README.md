@@ -17,15 +17,25 @@
 
 ## 安装字体相关命令
 
+字体文件可以出放在`tex/texmf-fonts/fonts/`，或`tex/texmf-fonts/fonts/truetype/vendor/fontfamily`（注意对应字体类型）
+
+使用系统字体，先设置环境变量，如：
+
 ```shell
->mtxrun --generate
->mtxrun --script font --reload
+set OSFONTDIR=C:\Windows\Fonts
+```
+
+更新文件目录，重载字体：
+
+```shell
+mtxrun --generate
+mtxrun --script font --reload
 ```
 
 查找你想要字体（包括文件名和符号名称），比如：
 
 ```shell
->mtxrun --script fonts --list --all --pattern=*noto*cjk*light*
+mtxrun --script fonts --list --all --pattern=*noto*cjk*sc*
 ```
 
 或列出四种特性：
@@ -33,3 +43,4 @@
 ```shell
 >mtxrun --script fonts --list --spec deng-light
 ```
+
