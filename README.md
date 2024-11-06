@@ -10,9 +10,12 @@
 3. 以开源简体中文字体[notocjksc](https://github.com/notofonts/noto-cjk)、[朱雀仿宋](https://github.com/TrionesType/zhuque)、[霞鹜文楷](https://github.com/lxgw/LxgwWenKai)为主的设置，拉丁字符使用latinmodern系列
     * opensc.tex
     * opensc-test.lmtx
-4. noto系字体设置，设置方式比较老了
+4. [方正字库“商业发布”免费字体](https://www.foundertype.com/index.php/About/powerbus.html)。请自行处理版权问题！
+    * fz.tex
+    * fz-test.lmtx
+5. noto系字体设置，设置方式比较老了
     * type-imp-notocjksc.mkiv
-5. 利用后背字体设置测试各种字体对难字的支持
+6. 利用后背字体设置测试各种字体对难字的支持
     * 难字.lmtx
 
 ## 安装字体相关命令
