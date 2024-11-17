@@ -1,0 +1,152 @@
+%
+%
+% 测试用例
+%
+%
+\setscript[hanzi] % 汉字处理脚本（断行等）
+\environment[notoplus.tex] % 模块中使用`\startenvironment...\stopenvironment`会出错
+\replacemissingcharacters % 缺字体时替换为方框标记
+
+\startTEXpage
+\showbodyfont[notoplus]
+
+
+% 设置正文字体，衬线-宋体家族
+\setupbodyfont[notoplus,rm]
+
+
+\chapter{第一章  一级标题  Chapter 1}
+
+\section{第一节  二级标题  Section 1}
+
+\subsection{第一小节  三级标题  Subsection 1}
+
+默认正文：中文字体测试。 Latin in fallback fonts.
+
+{\bf 粗体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\it 斜体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\bi 粗斜正文：中文字体测试。 Latin in fallback fonts.}
+
+
+合二为一后的东南大学分设5科27系：
+（1）文理科，设国文、历史、外文（由原西洋文学系、英语系及德、法、日各系合并组建而成）、政法、经济（由原政法经济系分设）、哲学、数学、物理、化学、地学等10系；
+（2）教育科，设教育、体育、心理、乡村教育等4系；
+{\bf （3）工科，设机械工程、土木工程、电机工程等3系；}
+{\it （4）农科，设动物、植物（由原生物系分设）、农艺、园艺、畜牧、蚕桑、病虫害等7系；}
+{\bi （5）商科，设会计、工商管理、银行等3系。}
+
+
+梅光迪（1890—1945），安徽宣城人，留美文学博士，1921年始任东南大学西洋文学系主任，极力宣传人文主义，1922年创办《学衡》杂志，与胡适讨论中国文学改革。
+梅光迪开设过“英文选读”和Mathew Arnold，Carlyle等专题课，吕叔湘只在大一选修了“英文选读”。
+吕叔湘回忆，用作教材的三本书是：
+Kipling的短篇小说选，Stevenson的{\bf In the South Seas}，以及{\bf Selected English Essays}。
+Kipling的短篇小说选，Stevenson的{\it In the South Seas}，以及{\it Selected English Essays}。
+Kipling的短篇小说选，Stevenson的{\bi In the South Seas}，以及{\bi Selected English Essays}。
+这三本书对大一年级学生来说难度还是不小的。
+
+
+% 设置正文字体，无衬线-等线家族
+\setupbodyfont[notoplus,ss]
+
+\chapter{第一章  一级标题  Chapter 1}
+
+\section{第一节  二级标题  Section 1}
+
+\subsection{第一小节  三级标题  Subsection 1}
+
+默认正文：中文字体测试。 Latin in fallback fonts.
+
+{\bf 粗体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\it 斜体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\bi 粗斜正文：中文字体测试。 Latin in fallback fonts.}
+
+
+合二为一后的东南大学分设5科27系：
+（1）文理科，设国文、历史、外文（由原西洋文学系、英语系及德、法、日各系合并组建而成）、政法、经济（由原政法经济系分设）、哲学、数学、物理、化学、地学等10系；
+（2）教育科，设教育、体育、心理、乡村教育等4系；
+{\bf （3）工科，设机械工程、土木工程、电机工程等3系；}
+{\it （4）农科，设动物、植物（由原生物系分设）、农艺、园艺、畜牧、蚕桑、病虫害等7系；}
+{\bi （5）商科，设会计、工商管理、银行等3系。}
+
+
+梅光迪（1890—1945），安徽宣城人，留美文学博士，1921年始任东南大学西洋文学系主任，极力宣传人文主义，1922年创办《学衡》杂志，与胡适讨论中国文学改革。
+梅光迪开设过“英文选读”和Mathew Arnold，Carlyle等专题课，吕叔湘只在大一选修了“英文选读”。
+吕叔湘回忆，用作教材的三本书是：
+Kipling的短篇小说选，Stevenson的{\bf In the South Seas}，以及{\bf Selected English Essays}。
+Kipling的短篇小说选，Stevenson的{\it In the South Seas}，以及{\it Selected English Essays}。
+Kipling的短篇小说选，Stevenson的{\bi In the South Seas}，以及{\bi Selected English Essays}。
+这三本书对大一年级学生来说难度还是不小的。
+
+% 设置正文字体，等宽-仿宋家族
+\setupbodyfont[notoplus,tt]
+
+\chapter{第一章  一级标题  Chapter 1}
+
+\section{第一节  二级标题  Section 1}
+
+\subsection{第一小节  三级标题  Subsection 1}
+
+默认正文：中文字体测试。 Latin in fallback fonts.
+
+{\bf 粗体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\it 斜体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\bi 粗斜正文：中文字体测试。 Latin in fallback fonts.}
+
+
+合二为一后的东南大学分设5科27系：
+（1）文理科，设国文、历史、外文（由原西洋文学系、英语系及德、法、日各系合并组建而成）、政法、经济（由原政法经济系分设）、哲学、数学、物理、化学、地学等10系；
+（2）教育科，设教育、体育、心理、乡村教育等4系；
+{\bf （3）工科，设机械工程、土木工程、电机工程等3系；}
+{\it （4）农科，设动物、植物（由原生物系分设）、农艺、园艺、畜牧、蚕桑、病虫害等7系；}
+{\bi （5）商科，设会计、工商管理、银行等3系。}
+
+
+梅光迪（1890—1945），安徽宣城人，留美文学博士，1921年始任东南大学西洋文学系主任，极力宣传人文主义，1922年创办《学衡》杂志，与胡适讨论中国文学改革。
+梅光迪开设过“英文选读”和Mathew Arnold，Carlyle等专题课，吕叔湘只在大一选修了“英文选读”。
+吕叔湘回忆，用作教材的三本书是：
+Kipling的短篇小说选，Stevenson的{\bf In the South Seas}，以及{\bf Selected English Essays}。
+Kipling的短篇小说选，Stevenson的{\it In the South Seas}，以及{\it Selected English Essays}。
+Kipling的短篇小说选，Stevenson的{\bi In the South Seas}，以及{\bi Selected English Essays}。
+这三本书对大一年级学生来说难度还是不小的。
+
+% 设置正文字体，手写-楷体家族
+\setupbodyfont[notoplus,hw]
+
+\chapter{第一章  一级标题  Chapter 1}
+
+\section{第一节  二级标题  Section 1}
+
+\subsection{第一小节  三级标题  Subsection 1}
+
+默认正文：中文字体测试。 Latin in fallback fonts.
+
+{\bf 粗体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\it 斜体正文：中文字体测试。 Latin in fallback fonts.}
+
+{\bi 粗斜正文：中文字体测试。 Latin in fallback fonts.}
+
+
+合二为一后的东南大学分设5科27系：
+（1）文理科，设国文、历史、外文（由原西洋文学系、英语系及德、法、日各系合并组建而成）、政法、经济（由原政法经济系分设）、哲学、数学、物理、化学、地学等10系；
+（2）教育科，设教育、体育、心理、乡村教育等4系；
+{\bf （3）工科，设机械工程、土木工程、电机工程等3系；}
+{\it （4）农科，设动物、植物（由原生物系分设）、农艺、园艺、畜牧、蚕桑、病虫害等7系；}
+{\bi （5）商科，设会计、工商管理、银行等3系。}
+
+
+梅光迪（1890—1945），安徽宣城人，留美文学博士，1921年始任东南大学西洋文学系主任，极力宣传人文主义，1922年创办《学衡》杂志，与胡适讨论中国文学改革。
+梅光迪开设过“英文选读”和Mathew Arnold，Carlyle等专题课，吕叔湘只在大一选修了“英文选读”。
+吕叔湘回忆，用作教材的三本书是：
+Kipling的短篇小说选，Stevenson的{\bf In the South Seas}，以及{\bf Selected English Essays}。
+Kipling的短篇小说选，Stevenson的{\it In the South Seas}，以及{\it Selected English Essays}。
+Kipling的短篇小说选，Stevenson的{\bi In the South Seas}，以及{\bi Selected English Essays}。
+这三本书对大一年级学生来说难度还是不小的。
+
+\stopTEXpage
