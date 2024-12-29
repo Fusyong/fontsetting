@@ -1,0 +1,152 @@
+%
+% 
+% 一个用于生产的简中和英文混排字体设置。
+% 宋、黑、西文用noto系列中、英字体，优点是：
+% 工业级别；开源；大字符集；风格统一。
+% 简中仿、楷没有工业级别的开源字体，
+% 暂用方正、华文占位作为示例，请注意：
+% !!!不是所有字体都有著作权
+% !!!但没有著作权的字体文件也可能有知识产权
+% !!!请自行保证合法使用
+% 
+%
+
+
+% 宋体/衬线体家族
+% 西文、数字强制使用后备字体家族，但尽可能优先使用主字族主字体
+\definefallbackfamily[notoplus][rm]            % 名称、类型
+    [Noto Serif]                              % 默认字体家族
+    [%用默认字族替换it sl bi bs sc，而tf、bf用主字体
+        tf={notoserifcjkscregular},%使用主字族字体
+        bf={notoserifcjkscbold},%使用主字族字体
+        it={notoseriflightitalic},%略细，默认则略粗
+        range={basiclatin,latinsupplement},
+        % check=yes,%查看主字体是否包含字符 yes no，会增加延迟；并得注意斜体等是不是正确
+        force=yes,% 强制替换，即使主字体包含字符，这样设置更明确
+        % scale=,
+        % offset=,
+    ]
+% 非强制后备字体，用于缺字时
+\definefallbackfamily[notoplus][rm]
+    [notoserifcjksc]
+    [
+        it={stkaiti},
+        preset=range:chinese,
+    ]
+\definefontfamily [notoplus][rm]   % 名称、类型： rm/serif, ss/sansserif, tt/teletype, hw/handwritten, cg/calligraphic, mm/mathematics
+    [notoserifcjksc]                           % 默认字体/字体家族
+    [
+        bf={notosanscjkscregular},        % 粗体用黑体表示
+        it={fzkaiz03s},                     % 斜体用楷体表示
+        bi={notosanscjkscbold},           % 粗斜体用粗黑表示
+    ]
+
+
+% 等线/无衬线家族
+\definefallbackfamily[notoplus][ss]
+    [Noto Sans]
+    [
+        tf={notosanscjksclight},
+        bf={notosanscjkscmedium},
+        range={basiclatin,latinsupplement},
+        force=yes,
+    ] 
+\definefallbackfamily[notoplus][ss]
+    [notosanscjksc]
+    [
+        it={stkaiti},
+        preset=range:chinese,
+    ]
+\definefontfamily[notoplus][ss]
+    [notosanscjksc]
+    [
+        tf={notosanscjksclight},
+        bf={notosanscjkscmedium},
+        it={fzkaiz03s},
+        bi={notosanscjkscbold}
+    ]
+
+% 仿宋/打字家族 fzfangsongz02s  stfangsong
+\definefallbackfamily[notoplus][tt]
+    [Noto Serif]
+    [%比照宋体家族而字重降低两级 https://source.typekit.com/source-han-serif/cn/
+        tf={fzfangsongz02s},
+        bf={notoserifcjkscmedium},
+        range={basiclatin,latinsupplement},
+        force=yes,
+    ]
+\definefallbackfamily[notoplus][tt]
+    [stfangsong]
+    [
+        it={stkaiti},
+        preset=range:chinese,
+    ]
+\definefontfamily[notoplus][tt]
+    [fzfangsongz02s]
+    [
+        bf={notosanscjkscregular},
+        it={fzkaiz03s},
+        bi={notosanscjkscbold}
+    ]
+
+
+% 楷体家族 stkaiti  fzkaiz03s
+\definefallbackfamily[notoplus][hw]
+    [Noto Sans]
+    [
+        tf={notosanscjksclight},
+        bf={notosanscjkscmedium},
+        range={basiclatin,latinsupplement},
+        force=yes,
+        scale=0.85,
+    ] 
+\definefallbackfamily[notoplus][hw]
+    [stkaiti]
+    [
+        it={stfangsong},
+        preset=range:chinese,
+    ]
+\definefontfamily[notoplus][hw]
+    [fzkaiz03s]
+    [
+        bf={notosanscjkscregular},
+        it={fzfangsongz02s},
+        bi={notosanscjkscbold}
+    ]
+
+
+% ConTeXt官方文档：
+% https://wiki.contextgarden.net/Command/definefontfamily
+% https://wiki.contextgarden.net/Command/definefallbackfamily
+
+
+% noto字体信息
+% https://fonts.google.com/
+
+
+% 来源于网上的一些示例（已经忘记出处）：
+% \definefontfamily[mainface]       [rm][TeX Gyre Pagella]
+% \definefontfamily[changedstyles]  [rm][TeX Gyre Pagella][tf=style:italic,it=style:bold,bi=style:bolditalic,bf=style:regular]
+% \definefontfamily[changedfiles]   [rm][TeX Gyre Pagella][it=file:texgyreherositalic,bi=file:texgyrecursorbolditalic]
+% \definefontfamily[changedfeatures][rm][TeX Gyre Pagella][tf=features:smallcaps,bf=features:none]
+% \definefallbackfamily [alegreya]  [rm][KaiseiOpti] [preset=range:japanese]
+% \definefallbackfamily [studentA]  [ss][Noto Sans CJK SC][range={0x0000-0x058F},force=yes]%preset=range:chinese
+
+
+%
+%
+% GB/T 18358—2009《中小学教科书幅面尺寸及版面通用要求》：
+%
+%
+% a类   一至三年级      楷      21至16pt
+% b类   二至四年级      楷、宋  14pt
+% c类   五年级至高中    宋      12pt
+% d类   高中理科        宋      10.5pt
+
+
+% 拼音字体
+% \definefont[pinyin] [name:wukongpinyinsanslight*default at 10.5pt]
+
+% 书写用田字格楷体、方格楷体
+% 统编教材，一至四年级田字格1.45cm见方，五六年级方格1.25cm见方
+% \definefont[tiangekai] [name:stkaiti*default at 35pt]
